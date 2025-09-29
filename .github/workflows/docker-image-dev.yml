@@ -25,8 +25,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build . -t ghcr.io/${{ github.repository }}/opds-abs:dev-${{ steps.vars.outputs.sha_short }}
+          docker build . -t ghcr.io/${{ github.repository,, }}/opds-abs:dev-${{ steps.vars.outputs.sha_short }}
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ github.repository }}/opds-abs:dev-${{ steps.vars.outputs.sha_short }}
+          docker push ghcr.io/${{ github.repository,, }}/opds-abs:dev-${{ steps.vars.outputs.sha_short }}
